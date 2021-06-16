@@ -1,0 +1,2 @@
+rootProject.name = "Turma 1 DH"
+include ':app'
