@@ -14,15 +14,15 @@ class MainActivity : AppCompatActivity() {
 
         Log.i("lifecycle", "onCreate")
 
-        findViewById<Button>(R.id.helloWorld).setOnClickListener {
-            val intent = Intent(this@MainActivity, SplashActivity::class.java)
-            intent.putExtra(KEY_INTENT_NOME, "César Rodrigues")
-            intent.putExtra(KEY_INTENT_SALDO, 50.0)
-            intent.putExtra(KEY_INTENT_SALDO_LONG, 50L)
-            startActivity(intent)
-
-            //MainActivity -> pacote(Intent) -> SplashActivity
-        }
+//        findViewById<Button>(R.id.helloWorld).setOnClickListener {
+//            val intent = Intent(this@MainActivity, SplashActivity::class.java)
+//            intent.putExtra(KEY_INTENT_NOME, "César Rodrigues")
+//            intent.putExtra(KEY_INTENT_SALDO, 50.0)
+//            intent.putExtra(KEY_INTENT_SALDO_LONG, 50L)
+//            startActivity(intent)
+//
+//            //MainActivity -> pacote(Intent) -> SplashActivity
+//        }
     }
 
     override fun onResume() {
