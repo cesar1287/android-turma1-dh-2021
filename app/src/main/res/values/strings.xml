@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Turma 1 DH</string>
+    <string name="hint_name">Nome</string>
+    <string name="hint_email">E-mail</string>
+    <string name="hint_gender">Sexo</string>
+    <string name="hint_phone">Celular</string>
+    <string name="hint_day">Dia</string>
+    <string name="hint_month">Mês</string>
+    <string name="hint_year">Ano</string>
+    <string name="helper_required">Obrigatório*</string>
+    <string name="save">Salvar</string>
 </resources>

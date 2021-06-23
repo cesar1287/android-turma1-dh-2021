@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Class 1 DH</string>
+    <string name="hint_name">Name</string>
+    <string name="hint_email">E-mail</string>
+    <string name="hint_gender">Gender</string>
+    <string name="hint_phone">Phone</string>
+    <string name="hint_day">Day</string>
+    <string name="hint_month">Month</string>
+    <string name="hint_year">Year</string>
+    <string name="helper_required">Required*</string>
+    <string name="save">Save</string>
+</resources>
