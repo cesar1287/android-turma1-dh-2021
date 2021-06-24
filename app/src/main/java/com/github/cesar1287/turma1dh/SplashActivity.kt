@@ -5,12 +5,16 @@ import android.os.Bundle
 import android.util.Log
 import com.github.cesar1287.turma1dh.MainActivity.Companion.KEY_INTENT_SALDO
 import com.github.cesar1287.turma1dh.MainActivity.Companion.KEY_INTENT_SALDO_LONG
+import com.github.cesar1287.turma1dh.databinding.ActivitySplashBinding
 
 class SplashActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivitySplashBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_splash)
+        binding = ActivitySplashBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         val nome = intent.getStringExtra(MainActivity.KEY_INTENT_NOME)
         val saldo = intent.getDoubleExtra(KEY_INTENT_SALDO, 0.0)
