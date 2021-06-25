@@ -24,6 +24,10 @@ class SplashActivity : AppCompatActivity() {
                 "e meu saldo é $saldo, meu saldo em long é $saldoLong")
 
         Log.i("lifecycle - splash", "onCreate")
+
+        /*
+        Activity -> Navigation -> Activity
+         */
     }
 
     override fun onResume() {

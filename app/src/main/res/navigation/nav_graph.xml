@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_homeFragment_to_aboutFragment"
             app:destination="@id/aboutFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_nav_graph_movies"
+            app:destination="@id/nav_graph_movies" />
     </fragment>
     <fragment
         android:id="@+id/aboutFragment"
@@ -36,4 +39,5 @@
         android:name="com.github.cesar1287.turma1dh.TransferFragment"
         android:label="fragment_transfer"
         tools:layout="@layout/fragment_transfer" />
+    <include app:graph="@navigation/nav_graph_movies" />
 </navigation>
