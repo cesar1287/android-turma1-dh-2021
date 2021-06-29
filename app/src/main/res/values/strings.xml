@@ -13,4 +13,8 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="about">Sobre</string>
     <string name="movies">Filmes</string>
+    <string name="click_here">clique aqui</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_movies">Movies</string>
+    <string name="menu_about">About</string>
 </resources>
