@@ -5,7 +5,7 @@
         android:enabled="true"
         android:title="@string/menu_home"/>
     <item
-        android:id="@+id/moviesFragment"
+        android:id="@+id/paymentFragment"
         android:enabled="true"
         android:title="@string/menu_movies"/>
 
