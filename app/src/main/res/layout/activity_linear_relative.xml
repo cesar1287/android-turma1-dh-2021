@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LinearRelativeActivity">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/etName"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:hint="@string/hint_name"
+        app:helperText="@string/helper_required">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/etEmail"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_below="@+id/etName"
+        android:hint="@string/hint_email"
+        app:helperText="@string/helper_required">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:id="@+id/vgLinearRelativeGenderPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_below="@+id/etEmail"
+        android:orientation="horizontal">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/etGender"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_weight="0.3"
+        android:hint="@string/hint_gender">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/etPhone"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.7"
+        android:hint="@string/hint_phone">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="phone" />
+    </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/vgLinearRelativeDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_below="@+id/vgLinearRelativeGenderPhone"
+        android:orientation="horizontal">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/etDay"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.33"
+        android:layout_marginEnd="16dp"
+        android:hint="@string/hint_day"
+        app:counterEnabled="true"
+        app:counterMaxLength="2">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:maxLength="2" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/etMonth"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.33"
+        android:layout_marginEnd="16dp"
+        android:hint="@string/hint_month">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/etYear"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.33"
+        android:hint="@string/hint_year"
+        app:counterEnabled="true"
+        app:counterMaxLength="4">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:maxLength="4" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="32dp"
+        android:text="@string/save"
+        android:layout_below="@+id/vgLinearRelativeDate"
+        android:layout_alignParentEnd="true"/>
+
+</RelativeLayout>
+
+<!--<com.google.android.material.textfield.TextInputLayout-->
+<!--android:id="@+id/etName"-->
+<!--style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="wrap_content"-->
+<!--android:layout_marginStart="16dp"-->
+<!--android:layout_marginTop="16dp"-->
+<!--android:layout_marginEnd="16dp"-->
+<!--android:hint="@string/hint_name"-->
+<!--app:helperText="@string/helper_required">-->
+
+<!--<com.google.android.material.textfield.TextInputEditText-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:inputType="textPersonName" />-->
+<!--</com.google.android.material.textfield.TextInputLayout>-->
+
+<!--<com.google.android.material.textfield.TextInputLayout-->
+<!--android:id="@+id/etEmail"-->
+<!--style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="wrap_content"-->
+<!--android:layout_marginStart="16dp"-->
+<!--android:layout_marginTop="16dp"-->
+<!--android:layout_marginEnd="16dp"-->
+<!--android:hint="@string/hint_email"-->
+<!--app:helperText="@string/helper_required">-->
+
+<!--<com.google.android.material.textfield.TextInputEditText-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:inputType="textEmailAddress" />-->
+
+<!--</com.google.android.material.textfield.TextInputLayout>-->
+
+<!--<LinearLayout-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="wrap_content"-->
+<!--android:layout_marginStart="16dp"-->
+<!--android:layout_marginTop="16dp"-->
+<!--android:layout_marginEnd="16dp"-->
+<!--android:orientation="horizontal">-->
+
+<!--<com.google.android.material.textfield.TextInputLayout-->
+<!--    android:id="@+id/etGender"-->
+<!--    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+<!--    android:layout_width="0dp"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:layout_marginEnd="16dp"-->
+<!--    android:layout_weight="0.3"-->
+<!--    android:hint="@string/hint_gender">-->
+
+<!--    <com.google.android.material.textfield.TextInputEditText-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:inputType="text" />-->
+<!--</com.google.android.material.textfield.TextInputLayout>-->
+
+<!--<com.google.android.material.textfield.TextInputLayout-->
+<!--    android:id="@+id/etPhone"-->
+<!--    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+<!--    android:layout_width="0dp"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:layout_weight="0.7"-->
+<!--    android:hint="@string/hint_phone">-->
+
+<!--    <com.google.android.material.textfield.TextInputEditText-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:inputType="phone" />-->
+<!--</com.google.android.material.textfield.TextInputLayout>-->
+<!--</LinearLayout>-->
+
+<!--<LinearLayout-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="wrap_content"-->
+<!--android:layout_marginStart="16dp"-->
+<!--android:layout_marginTop="16dp"-->
+<!--android:layout_marginEnd="16dp"-->
+<!--android:orientation="horizontal">-->
+
+<!--<com.google.android.material.textfield.TextInputLayout-->
+<!--    android:id="@+id/etDay"-->
+<!--    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+<!--    android:layout_width="0dp"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:layout_weight="0.33"-->
+<!--    android:layout_marginEnd="16dp"-->
+<!--    android:hint="@string/hint_day"-->
+<!--    app:counterEnabled="true"-->
+<!--    app:counterMaxLength="2">-->
+
+<!--    <com.google.android.material.textfield.TextInputEditText-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:inputType="number"-->
+<!--        android:maxLength="2" />-->
+<!--</com.google.android.material.textfield.TextInputLayout>-->
+
+<!--<com.google.android.material.textfield.TextInputLayout-->
+<!--    android:id="@+id/etMonth"-->
+<!--    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+<!--    android:layout_width="0dp"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:layout_weight="0.33"-->
+<!--    android:layout_marginEnd="16dp"-->
+<!--    android:hint="@string/hint_month">-->
+
+<!--    <com.google.android.material.textfield.TextInputEditText-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:inputType="numberDecimal" />-->
+
+<!--</com.google.android.material.textfield.TextInputLayout>-->
+
+<!--<com.google.android.material.textfield.TextInputLayout-->
+<!--    android:id="@+id/etYear"-->
+<!--    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+<!--    android:layout_width="0dp"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:layout_weight="0.33"-->
+<!--    android:hint="@string/hint_year"-->
+<!--    app:counterEnabled="true"-->
+<!--    app:counterMaxLength="4">-->
+
+<!--    <com.google.android.material.textfield.TextInputEditText-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:inputType="number"-->
+<!--        android:maxLength="4" />-->
+<!--</com.google.android.material.textfield.TextInputLayout>-->
+
+<!--</LinearLayout>-->
+
+<!--<androidx.constraintlayout.widget.ConstraintLayout-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="wrap_content"-->
+<!--android:layout_margin="32dp">-->
+
+<!--<Button-->
+<!--    android:id="@+id/btSave"-->
+<!--    android:layout_width="wrap_content"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:text="@string/save"-->
+<!--    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--    app:layout_constraintEnd_toEndOf="parent"-->
+<!--    app:layout_constraintHorizontal_bias="1.0"-->
+<!--    app:layout_constraintStart_toStartOf="parent"-->
+<!--    app:layout_constraintTop_toTopOf="parent"-->
+<!--    app:layout_constraintVertical_bias="0.1" />-->
+<!--</androidx.constraintlayout.widget.ConstraintLayout>-->
