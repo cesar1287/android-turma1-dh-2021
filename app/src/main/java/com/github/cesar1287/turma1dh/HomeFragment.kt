@@ -1,5 +1,7 @@
 package com.github.cesar1287.turma1dh
 
+import android.animation.Animator
+import android.animation.ValueAnimator
 import android.os.Bundle
 import android.os.Handler
 import androidx.fragment.app.Fragment
@@ -51,6 +53,25 @@ class HomeFragment : Fragment() {
         binding?.btSplashMovies?.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_nav_graph_movies)
         }
+
+        binding?.animationView?.addAnimatorListener(object: Animator.AnimatorListener {
+            override fun onAnimationStart(p0: Animator?) {
+                //
+            }
+
+            override fun onAnimationEnd(p0: Animator?) {
+                binding?.animationView?.isVisible = false
+            }
+
+            override fun onAnimationCancel(p0: Animator?) {
+                //
+            }
+
+            override fun onAnimationRepeat(p0: Animator?) {
+                //
+            }
+
+        })
     }
 
     override fun onDestroyView() {
