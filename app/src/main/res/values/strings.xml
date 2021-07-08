@@ -20,4 +20,7 @@
     <string name="text_label_1">Tab 1</string>
     <string name="text_label_2">Tab 2</string>
     <string name="text_label_3">Tab 3</string>
+    <string name="tab_musics">Músicas</string>
+    <string name="tab_images">Imagens</string>
+    <string name="tab_albums">Álbuns</string>
 </resources>
