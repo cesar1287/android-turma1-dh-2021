@@ -1,4 +1,4 @@
-package com.github.cesar1287.turma1dh
+package com.github.cesar1287.turma1dh.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

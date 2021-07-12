@@ -1,7 +1,6 @@
-package com.github.cesar1287.turma1dh
+package com.github.cesar1287.turma1dh.fragment
 
 import android.animation.Animator
-import android.animation.ValueAnimator
 import android.os.Bundle
 import android.os.Handler
 import androidx.fragment.app.Fragment
@@ -11,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.navigation.fragment.findNavController
+import com.github.cesar1287.turma1dh.R
 import com.github.cesar1287.turma1dh.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {

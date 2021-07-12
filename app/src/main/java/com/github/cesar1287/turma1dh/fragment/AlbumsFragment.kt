@@ -1,4 +1,4 @@
-package com.github.cesar1287.turma1dh
+package com.github.cesar1287.turma1dh.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

@@ -1,14 +1,12 @@
-package com.github.cesar1287.turma1dh
+package com.github.cesar1287.turma1dh.fragment
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.FragmentTransaction
+import com.github.cesar1287.turma1dh.adapter.ViewPagerAdapter
 import com.github.cesar1287.turma1dh.databinding.FragmentPaymentBinding
-import com.google.android.material.tabs.TabLayout
 
 class PaymentFragment : Fragment() {
 

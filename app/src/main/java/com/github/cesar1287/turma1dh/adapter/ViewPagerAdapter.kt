@@ -1,4 +1,4 @@
-package com.github.cesar1287.turma1dh
+package com.github.cesar1287.turma1dh.adapter
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
