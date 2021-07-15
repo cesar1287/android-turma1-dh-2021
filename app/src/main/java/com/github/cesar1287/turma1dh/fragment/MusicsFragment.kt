@@ -5,12 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.github.cesar1287.turma1dh.adapter.MusicAdapter
 import com.github.cesar1287.turma1dh.databinding.FragmentMusicsBinding
 import com.github.cesar1287.turma1dh.model.Music
+import com.github.cesar1287.turma1dh.utils.OnClickListenerMusic
 
-class MusicsFragment : Fragment() {
+class MusicsFragment : Fragment(), OnClickListenerMusic {
 
     private var binding: FragmentMusicsBinding? = null
 
@@ -38,7 +40,7 @@ class MusicsFragment : Fragment() {
             artist = "Bruno Mars"
         )
         val music4 = Music(
-            name = "Dr Mr President",
+            name = "Dear Mr President",
             artist = "P1nk!"
         )
         val music5 = Music(
@@ -96,8 +98,12 @@ class MusicsFragment : Fragment() {
         )
 
         val musicAdapter = MusicAdapter(
-            musicList = musicList
-        )
+            musicList = musicList,
+            this
+        ) {
+            Toast.makeText(context, "${it.name} - ${it.artist}", Toast.LENGTH_SHORT).show()
+        }
+
         binding?.let {
             with(it) {
                 vgMusicsRecyclerView.layoutManager = LinearLayoutManager(context)
@@ -109,5 +115,9 @@ class MusicsFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         binding = null
+    }
+
+    override fun onClickListener(music: Music) {
+        Toast.makeText(context, "${music.name} - ${music.artist}", Toast.LENGTH_SHORT).show()
     }
 }
