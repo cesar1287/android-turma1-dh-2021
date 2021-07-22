@@ -9,22 +9,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Turma1DH">
-        <activity android:name=".activity.AnimalActivity">
-        </activity>
-        <activity android:name=".activity.MusicCatalogActivity">
-
-        </activity>
-        <activity android:name=".activity.LinearRelativeActivity" />
-        <activity android:name=".activity.MoviesActivity" />
-        <activity android:name=".activity.SplashActivity"></activity>
+        <activity android:name=".sharedchallenge.HomeSharedActivity"></activity>
+        <activity android:name=".sharedchallenge.LoginSharedActivity" />
         <activity
-            android:name=".activity.MainActivity"
-            android:windowSoftInputMode="adjustResize">
+            android:name=".sharedchallenge.SplashScreenSharedActivity"
+            android:noHistory="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".activity.AnimalActivity" />
+        <activity android:name=".activity.MusicCatalogActivity" />
+        <activity android:name=".activity.LinearRelativeActivity" />
+        <activity android:name=".activity.MoviesActivity" />
+        <activity android:name=".activity.SplashActivity" />
+        <activity
+            android:name=".activity.MainActivity"
+            android:windowSoftInputMode="adjustResize">
         </activity>
     </application>
 
