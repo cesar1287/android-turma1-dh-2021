@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.github.cesar1287.turma1dh.databinding.FragmentHomeBinding
+import com.google.android.material.datepicker.MaterialDatePicker
 
 class HomeFragment : Fragment() {
 
@@ -29,14 +30,25 @@ class HomeFragment : Fragment() {
         binding?.btSplashMovies?.text = "Alterei via fragment"
 
         binding?.btSplashAbout?.setOnClickListener {
-            val ehPar = 10 % 2 == 0
-            val bundle = Bundle()
-            bundle.putString("teste", "teste")
-            bundle.putInt("teste1", 2)
-            findNavController().navigate(
-                R.id.action_homeFragment_to_aboutFragment,
-                bundle
-            )
+//            val ehPar = 10 % 2 == 0
+//            val bundle = Bundle()
+//            bundle.putString("teste", "teste")
+//            bundle.putInt("teste1", 2)
+//            findNavController().navigate(
+//                R.id.action_homeFragment_to_aboutFragment,
+//                bundle
+//            )
+
+            val datePicker =
+                MaterialDatePicker.Builder.datePicker()
+                    .setTitleText("Select date")
+                    .setInputMode(MaterialDatePicker.INPUT_MODE_CALENDAR)
+                    .setSelection(MaterialDatePicker.todayInUtcMilliseconds())
+                    .build()
+
+            activity?.let {
+                datePicker.show(it.supportFragmentManager, "tag")
+            }
         }
 
         binding?.tvHomeClickHere?.setOnClickListener {
