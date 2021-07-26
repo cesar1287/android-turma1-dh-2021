@@ -1,7 +1,8 @@
-package com.github.cesar1287.turma1dh
+package com.github.cesar1287.turma1dh.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.github.cesar1287.turma1dh.R
 
 class MoviesActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

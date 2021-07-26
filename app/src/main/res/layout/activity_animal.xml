@@ -3,13 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.AboutFragment">
+    tools:context=".activity.AnimalActivity">
 
-    <Button
-        android:id="@+id/btAboutBack"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/vgAnimalRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_blank_fragment"
-        android:layout_gravity="center"/>
+        android:layout_height="match_parent" />
 
 </FrameLayout>

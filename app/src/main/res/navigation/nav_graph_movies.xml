@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/moviesFragment"
-        android:name="com.github.cesar1287.turma1dh.MoviesFragment"
+        android:name="com.github.cesar1287.turma1dh.fragment.MoviesFragment"
         android:label="fragment_movies"
         tools:layout="@layout/fragment_movies" />
 </navigation>
