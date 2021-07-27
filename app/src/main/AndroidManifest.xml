@@ -2,6 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.github.cesar1287.turma1dh">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,17 +18,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Turma1DH">
-        <activity android:name=".sharedchallenge.HomeSharedActivity"></activity>
+        <activity android:name=".sharedchallenge.HomeSharedActivity"/>
         <activity android:name=".sharedchallenge.LoginSharedActivity" />
         <activity
             android:name=".sharedchallenge.SplashScreenSharedActivity"
             android:noHistory="true"
             android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".activity.AnimalActivity" />
         <activity android:name=".activity.MusicCatalogActivity" />
@@ -29,6 +33,12 @@
         <activity
             android:name=".activity.MainActivity"
             android:windowSoftInputMode="adjustResize">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 

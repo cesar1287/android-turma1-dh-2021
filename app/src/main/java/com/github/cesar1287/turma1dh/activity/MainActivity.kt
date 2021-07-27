@@ -1,9 +1,13 @@
 package com.github.cesar1287.turma1dh.activity
 
+import android.Manifest
 import android.content.SharedPreferences
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.util.Log
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.content.edit
 import com.github.cesar1287.turma1dh.R
 import com.github.cesar1287.turma1dh.databinding.ActivityMainBinding
@@ -23,6 +27,52 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // Register the permissions callback, which handles the user's response to the
+        // system permissions dialog. Save the return value, an instance of
+        // ActivityResultLauncher. You can use either a val, as shown in this snippet,
+        // or a lateinit var in your onAttach() or onCreate() method.
+        val requestPermissionLauncher =
+            registerForActivityResult(
+                ActivityResultContracts.RequestPermission()
+            ) { isGranted: Boolean ->
+                if (isGranted) {
+                    Snackbar.make(
+                        binding.btSave,
+                        "Permissão de localização concedida",
+                        Snackbar.LENGTH_SHORT
+                    ).show()
+                } else {
+                    Snackbar.make(
+                        binding.btSave,
+                        "Permissão de localização NEGADA, VAI SUBIR NINGUÉM",
+                        Snackbar.LENGTH_SHORT
+                    ).show()
+                }
+            }
+
+        binding.btPermission?.setOnClickListener {
+            when {
+                ContextCompat.checkSelfPermission(
+                    this,
+                    Manifest.permission.ACCESS_FINE_LOCATION
+                ) == PackageManager.PERMISSION_GRANTED -> {
+                    // You can use the API that requires the permission.
+                    Snackbar.make(
+                        binding.btSave,
+                        "Permissão de localização já concedida",
+                        Snackbar.LENGTH_SHORT
+                    ).show()
+                }
+                else -> {
+                    // You can directly ask for the permission.
+                    // The registered ActivityResultCallback gets the result of this request.
+                    requestPermissionLauncher.launch(
+                        Manifest.permission.ACCESS_FINE_LOCATION
+                    )
+                }
+            }
+        }
 
         Log.i("lifecycle", "onCreate")
 //        val editor = sharedPreferences.edit()

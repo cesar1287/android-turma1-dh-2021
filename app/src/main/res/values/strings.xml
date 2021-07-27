@@ -27,4 +27,5 @@
     <string name="hint_password">Senha</string>
     <string name="login">Entrar</string>
     <string name="keep_connected">Manter-me conectado</string>
+    <string name="permission">Solicitar permissão</string>
 </resources>
