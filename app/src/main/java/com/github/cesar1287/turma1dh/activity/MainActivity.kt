@@ -1,8 +1,11 @@
 package com.github.cesar1287.turma1dh.activity
 
 import android.Manifest
+import android.content.Intent
+import android.content.IntentFilter
 import android.content.SharedPreferences
 import android.content.pm.PackageManager
+import android.net.ConnectivityManager
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.result.contract.ActivityResultContracts
@@ -11,6 +14,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.content.edit
 import com.github.cesar1287.turma1dh.R
 import com.github.cesar1287.turma1dh.databinding.ActivityMainBinding
+import com.github.cesar1287.turma1dh.utils.MyBroadcastReceiver
 import com.github.cesar1287.turma1dh.utils.toEditable
 import com.github.cesar1287.turma1dh.utils.getText
 import com.google.android.material.snackbar.Snackbar
@@ -27,6 +31,18 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val myBroadcastReceiver = MyBroadcastReceiver()
+        val filter = IntentFilter().apply {
+            addAction("com.example.broadcast.TURMADH1")
+        }
+        registerReceiver(myBroadcastReceiver, filter)
+
+        Intent().also { intent ->
+            intent.action = "com.example.broadcast.TURMADH1"
+            intent.putExtra("data", "Notice me senpai!")
+            sendBroadcast(intent)
+        }
 
         // Register the permissions callback, which handles the user's response to the
         // system permissions dialog. Save the return value, an instance of
