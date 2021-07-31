@@ -12,12 +12,17 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.content.edit
+import androidx.work.OneTimeWorkRequestBuilder
+import androidx.work.WorkManager
+import androidx.work.WorkRequest
 import com.github.cesar1287.turma1dh.R
 import com.github.cesar1287.turma1dh.databinding.ActivityMainBinding
 import com.github.cesar1287.turma1dh.utils.MyBroadcastReceiver
+import com.github.cesar1287.turma1dh.utils.UploadWorker
 import com.github.cesar1287.turma1dh.utils.toEditable
 import com.github.cesar1287.turma1dh.utils.getText
 import com.google.android.material.snackbar.Snackbar
+import java.util.concurrent.TimeUnit
 
 class MainActivity : AppCompatActivity() {
 
@@ -43,6 +48,15 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("data", "Notice me senpai!")
             sendBroadcast(intent)
         }
+
+        val uploadWorkRequest: WorkRequest =
+            OneTimeWorkRequestBuilder<UploadWorker>()
+                .setInitialDelay(30, TimeUnit.SECONDS)
+                .build()
+
+        WorkManager
+            .getInstance(this)
+            .enqueue(uploadWorkRequest)
 
         // Register the permissions callback, which handles the user's response to the
         // system permissions dialog. Save the return value, an instance of
